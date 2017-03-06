@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Trie {
 	private Node root;
@@ -61,30 +64,19 @@ public class Trie {
 		}
 		System.out.println("false");
 	}
-	public static void main(String[] args){
+	public static void main(String[] args) throws FileNotFoundException{
 		Trie t = new Trie();
-		t.insert("hello");
-		t.insert("gg");
-		t.insert("eesama");
-		t.insert("shulin");
-		t.insert("mmeda");
-		t.insert("mmd");
-		t.insert("gggsima");
-		t.insert("hei");
-		t.insert("yo");
-		
-		t.search("ale");
-		t.search("mmd");
-		t.search("eesama");
-		t.search("hello");
-		t.search("hei");
-		t.search("mmeda");
-//		t.search("eesama");
-//		t.search("shulin");
-//		t.search("mmeda");
-//		t.search("mmd");
-//		t.search("gggsima");
-//		t.search("hei");
-//		t.search("yo");
+		File f = new File("dict.txt");
+		Scanner s = new Scanner(f);
+		while(s.hasNextLine()){
+			t.insert(s.nextLine());
+		}
+//		System.out.println("insert completed");
+		Scanner s1 = new Scanner(System.in);
+		while(true){
+			String c = s1.next();
+			if(c!=null)
+			t.search(c);
+		}
 	}
 }
