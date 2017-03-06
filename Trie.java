@@ -7,7 +7,7 @@ public class Trie {
 		root.word = false;
 	}
 	private class Node{
-		char content;
+		private char content;
 		boolean word;
 		int count;
 		Node[] childlist = new Node[26];
@@ -47,19 +47,42 @@ public class Trie {
 		for(int i=0;i<s.length();i++){
 			char c = s.charAt(i);
 			if(node.childlist[getindex(c)]==null){
-				System.out.print("false");
+				System.out.println("false");
+				return;
 			}
 			if(node.childlist[getindex(c)].word){
-				System.out.print("true");
+				System.out.println("true");
+				return;
 			}
 			
 			node = node.childlist[getindex(c)];
 		}
-		System.out.print("false");
+		System.out.println("false");
 	}
 	public static void main(String[] args){
 		Trie t = new Trie();
 		t.insert("hello");
-		t.search("al");
+		t.insert("gg");
+		t.insert("eesama");
+		t.insert("shulin");
+		t.insert("mmeda");
+		t.insert("mmd");
+		t.insert("gggsima");
+		t.insert("hei");
+		t.insert("yo");
+		t.insert("hello");
+		
+		t.search("ale");
+		t.search("mmd");
+		t.search("eesama");
+		t.search("hello");
+//		t.search("gg");
+//		t.search("eesama");
+//		t.search("shulin");
+//		t.search("mmeda");
+//		t.search("mmd");
+//		t.search("gggsima");
+//		t.search("hei");
+//		t.search("yo");
 	}
 }
