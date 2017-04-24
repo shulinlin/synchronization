@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.awt.Graphics;
 
 public abstract class Shape {
@@ -66,4 +67,44 @@ class Rectangle extends Shape{
 //		// TODO Auto-generated method stub
 //		return new Rectangle(x,y,(x2-x),(y2-y));
 //	}
+=======
+//import java.awt.Graphics;
+//
+//public abstract class Shape {
+//	protected int x,y;
+//
+//	public Shape(int x, int y) { this.x = x; this.y = y; }
+//
+//	public abstract void draw(Graphics g) ;	
+//	public void translate(int dx,int dy){
+//		x+=dx;
+//		y+=dy;
+//	}
+//	public abstract Rectangle boundingbox();
+//}
+//class Circles extends Shape{
+//	private int r;
+//
+//	public Circles(int x, int y,int r) {
+//		super(x, y);
+//		this.r = r;
+//		// TODO Auto-generated constructor stub
+//	}
+//
+//	@Override
+//	public void draw(Graphics g) {
+//		// TODO Auto-generated method stub
+//		g.drawOval(x, y, r, r);
+//	}
+//
+//	@Override
+//	public Rectangle boundingbox() {
+//		// TODO Auto-generated method stub
+//		return new Rectangle();
+//	}
+//
+//}
+//class Rectangle extends Shape{
+//
+>>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47
 //}

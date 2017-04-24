@@ -1,15 +1,23 @@
 /Mycalculator.class
 /Trie$Node.class
 /Trie.class
+<<<<<<< HEAD
 /Hashmap.class
 /Fileimport.class
 /Juliandate.class
 /Line.class
+=======
+/Line.class
+/Fileimport.class
+/Juliandate.class
+/Translator.class
+>>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47
 /Translator$1.class
 /Translator$2.class
 /Translator$3.class
 /Translator$4.class
 /Translator$5.class
+<<<<<<< HEAD
 /Translator.class
 /Hashmap$Node.class
 /Linearprobing.class
@@ -28,3 +36,19 @@
 /Matrix.class
 /Boggletest.class
 /Stock.class
+=======
+/Hashmap.class
+/Hashmap$Node.class
+/Linearprobing.class
+/Linearprobing$Node.class
+/Counting.class
+/Circles.class
+/Countingsheep.class
+/Rectangle.class
+/Shape.class
+/Cake.class
+/Matrix.class
+/Boggle.class
+/Tri$Node.class
+/Tri.class
+>>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47

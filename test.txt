@@ -1,4 +1,19 @@
+<<<<<<< HEAD
 hello
 good
 bad
 mother
+=======
+3
+3 3
+G??
+?C?
+??J
+3 4
+CODE
+????
+?JAM
+2 2
+CA
+KE
+>>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47

@@ -106,7 +106,7 @@ public class Translator extends JFrame implements ActionListener{
 				String path = sav.getSelectedFile().toString();
 				try{
 					FileWriter writer = new FileWriter(path);
-					writer.write(t1.getText());
+					writer.write(t1.getText()+" ");
 					writer.flush();
 				}catch(IOException e1){
 					e1.printStackTrace();
@@ -144,6 +144,7 @@ public class Translator extends JFrame implements ActionListener{
 	}
 
 }
+<<<<<<< HEAD
 class Trie {
 	private Node root;
 	char[] cha = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
@@ -211,3 +212,72 @@ class Trie {
 		return "";
 	}
 }
+=======
+//class Trie {
+//	private Node root;
+//	char[] cha = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+//	public Trie(){
+//		root = new Node();
+//		root.word = false;
+//	}
+//	 class Node{
+//		 char content;
+//		 String translation;
+//		boolean word;
+//		int count;
+//		Node[] childlist = new Node[26];
+//		public Node(char a){
+//
+//			content = a;
+//			word = false;
+//	//		count = 0;
+//		}
+//		public Node(){
+//
+//		}
+//
+//	}
+//	public int getindex(char c){
+//		for(int i= 0;i<cha.length;i++){
+//			if(c==cha[i]){
+//				return i;
+//			}
+//		}
+//		return -1;
+//	}
+//	public void insert(String s,String translation){
+//		Node node = root;
+//		for(int i=0;i<s.length();i++){
+//			char c = s.charAt(i);
+//			if(node.childlist[getindex(c)]==null){
+//			node.childlist[getindex(c)] = new Node(c);
+//			}
+//			node = node.childlist[getindex(c)];
+//		}
+////		node.childlist[getindex(s.charAt(s.length()-1))] = new Node(s.charAt(s.length()-1));
+//		 node.word = true;
+//		 node.translation = translation;
+//		
+//		
+//	}
+//	public String search(String s){
+//		Node node  = root;
+//		for(int i=0;i<s.length();i++){
+//			char c = s.charAt(i);
+//			if(node.childlist[getindex(c)]==null){
+////				System.out.println("false");
+//				return s;
+//			}
+//			
+//			
+//			node = node.childlist[getindex(c)];
+//		}
+//		if(node.word){
+////			System.out.println("true");
+//			return node.translation;
+//		}
+////		System.out.println("false");
+//		return s;
+//	}
+//}
+>>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47

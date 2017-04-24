@@ -9,8 +9,9 @@ public class Trie {
 		root = new Node();
 		root.word = false;
 	}
-	private class Node{
+	 class Node{
 		 char content;
+		 String translation;
 		boolean word;
 		int count;
 		Node[] childlist = new Node[26];
@@ -33,7 +34,7 @@ public class Trie {
 		}
 		return -1;
 	}
-	public void insert(String s){
+	public void insert(String s,String translation){
 		Node node = root;
 		for(int i=0;i<s.length();i++){
 			char c = s.charAt(i);
@@ -44,39 +45,45 @@ public class Trie {
 		}
 //		node.childlist[getindex(s.charAt(s.length()-1))] = new Node(s.charAt(s.length()-1));
 		 node.word = true;
+		 node.translation = translation;
 		
 		
 	}
-	public void search(String s){
+	public String search(String s){
 		Node node  = root;
 		for(int i=0;i<s.length();i++){
 			char c = s.charAt(i);
 			if(node.childlist[getindex(c)]==null){
-				System.out.println("false");
-				return;
+//				System.out.println("false");
+				return s;
 			}
-			if(node.childlist[getindex(c)].word){
-				System.out.println("true");
-				return;
-			}
+			
 			
 			node = node.childlist[getindex(c)];
 		}
-		System.out.println("false");
+		if(node.word){
+//			System.out.println("true");
+			return node.translation;
+		}
+//		System.out.println("false");
+		return s;
 	}
 	public static void main(String[] args) throws FileNotFoundException{
 		Trie t = new Trie();
 		File f = new File("dict.txt");
+		File f1 = new File("hw5.txt");
 		Scanner s = new Scanner(f);
-		while(s.hasNextLine()){
-			t.insert(s.nextLine());
-		}
+	//	t.insert("have");
+//		t.insert("has");
+		t.search("havebaby");
+		t.search("have");
+//		while(s.hasNextLine()){
+//			t.insert(s.nextLine());
+//		}
 //		System.out.println("insert completed");
-		Scanner s1 = new Scanner(System.in);
-		while(true){
-			String c = s1.next();
-			if(c!=null)
-			t.search(c);
-		}
+//		Scanner s1 = new Scanner(f1);
+//		while(s1.hasNextLine()){
+//			t.search(s1.nextLine());
+//		}
 	}
 }
