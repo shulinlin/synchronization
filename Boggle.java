@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class Boggle{
 	private boolean[] isused = new boolean[16];
 	private String prefix = "";
 	private int length=0;
+	private ArrayList<String> conta = new ArrayList<String>(1);
 	Boggle(Tri t,char[] c){
 		for(int i=0;i<c.length;i++){
 			boggle[i] = c[i];
@@ -28,7 +30,9 @@ public class Boggle{
 		word += boggle[i];
 		isused[i] = true;
 		if(t.contains(word)&&word.length()>=3){
-			System.out.println("i have "+word);
+			if(conta.contains(word))
+				;
+			 conta.add(word);
 		}
 		if(t.containsprefix(word)){
 			if((i+1)%4!=0&&!isused[i+1]){
@@ -71,10 +75,14 @@ public class Boggle{
 		//		prefix = "";
 
 	}
+	public void display(){
+		for(String s:conta)
+			System.out.println(s);
+	}
 	public static void main(String[] args) throws FileNotFoundException{
 		Tri t = new Tri();
 		int n;
-		File f1 = new File("dict.txt");
+		File f1 = new File("dictionary.txt");
 		File f2 = new File("boggle.dat");
 		Scanner s = new Scanner(f1);
 		while(s.hasNext()){
@@ -90,6 +98,7 @@ public class Boggle{
 			i++;
 		}
 		Boggle b = new Boggle(t,bog);
+		b.display();
 
 	}
 }
@@ -112,6 +121,8 @@ class Tri{
 		key =key.toLowerCase(Locale.ROOT);
 		Node temp = root;
 		for(int i=0;i<key.length();i++){
+			if(Math.abs(key.charAt(i)-'a')>26)
+				continue;
 				if(root.child[key.charAt(i)-'a']==null){
 				root.child[key.charAt(i)-'a'] = new Node(key.charAt(i));
 			}
