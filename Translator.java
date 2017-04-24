@@ -29,17 +29,17 @@ public class Translator extends JFrame implements ActionListener{
 		t2.setEditable(false);
 		JMenuBar menubar = new JMenuBar();
 		JMenu menu = new JMenu("File");
-		menu.setMnemonic(KeyEvent.VK_A);
+		//	menu.setMnemonic(KeyEvent.VK_A);
 		menu.getAccessibleContext();
 		menubar.add(menu);
 		JMenuItem open = new JMenuItem("Open");
-		open.setMnemonic(KeyEvent.VK_A);
+		//	open.setMnemonic(KeyEvent.VK_A);
 		menu.add(open);
 		JMenuItem save = new JMenuItem("Save");
-		save.setMnemonic(KeyEvent.VK_A);
+		//	save.setMnemonic(KeyEvent.VK_A);
 		menu.add(save);
 		JMenuItem quit = new JMenuItem("Quit");
-		quit.setMnemonic(KeyEvent.VK_A);
+		//	quit.setMnemonic(KeyEvent.VK_A);
 		menu.add(quit);
 		JPanel p1= new JPanel(new GridLayout(1, 2,10,10));
 		JPanel p2 = new JPanel(new GridLayout(1, 2,10,10));
@@ -51,7 +51,7 @@ public class Translator extends JFrame implements ActionListener{
 		p2.add(clear);
 		p2.add(translate);
 		clear.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -60,20 +60,20 @@ public class Translator extends JFrame implements ActionListener{
 			}
 		});
 		translate.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				String[] txt = t1.getText().split(" ");
 				String trans = "";
 				for(String i : txt)
-				trans+=dict.search(i);
+					trans+=dict.search(i);
 				t2.setText(trans);
 
 			}
 		});
 		open.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -93,11 +93,11 @@ public class Translator extends JFrame implements ActionListener{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
+
 			}
 		});
 		save.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -114,7 +114,7 @@ public class Translator extends JFrame implements ActionListener{
 			}
 		});
 		quit.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -126,10 +126,9 @@ public class Translator extends JFrame implements ActionListener{
 	}
 
 	public static void main(String[] args) throws FileNotFoundException{
-		
+
 		Trie dict = new Trie();
 		Translator t = new Translator(dict);
-		
 		File f = new File("dict.dat");
 		Scanner s = new Scanner(f);
 		while(s.hasNextLine()){
@@ -141,7 +140,7 @@ public class Translator extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
@@ -152,9 +151,9 @@ class Trie {
 		root = new Node();
 		root.word = false;
 	}
-	 class Node{
-		 char content;
-		 String translation;
+	class Node{
+		char content;
+		String translation;
 		boolean word;
 		int count;
 		Node[] childlist = new Node[26];
@@ -162,7 +161,7 @@ class Trie {
 
 			content = a;
 			word = false;
-	//		count = 0;
+			//		count = 0;
 		}
 		public Node(){
 
@@ -182,33 +181,33 @@ class Trie {
 		for(int i=0;i<s.length();i++){
 			char c = s.charAt(i);
 			if(node.childlist[getindex(c)]==null){
-			node.childlist[getindex(c)] = new Node(c);
+				node.childlist[getindex(c)] = new Node(c);
 			}
 			node = node.childlist[getindex(c)];
 		}
-//		node.childlist[getindex(s.charAt(s.length()-1))] = new Node(s.charAt(s.length()-1));
-		 node.word = true;
-		 node.translation = translation;
-		
-		
+		//		node.childlist[getindex(s.charAt(s.length()-1))] = new Node(s.charAt(s.length()-1));
+		node.word = true;
+		node.translation = translation;
+
+
 	}
 	public String search(String s){
 		Node node  = root;
 		for(int i=0;i<s.length();i++){
 			char c = s.charAt(i);
 			if(node.childlist[getindex(c)]==null){
-//				System.out.println("false");
+				//				System.out.println("false");
 				return "";
 			}
-			
-			
+
+
 			node = node.childlist[getindex(c)];
 		}
 		if(node.word){
-//			System.out.println("true");
+			//			System.out.println("true");
 			return node.translation;
 		}
-//		System.out.println("false");
+		//		System.out.println("false");
 		return "";
 	}
 }

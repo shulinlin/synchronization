@@ -2,8 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Linearprobing {
-
+public class Quadratic {
 	private static class Node{
 		String key = "null";
 		Node(String key){
@@ -41,7 +40,7 @@ public class Linearprobing {
 
 	}
 
-	public Linearprobing(int init){
+	public Quadratic(int init){
 		table = new Node[init];
 		hist = new int[init];
 	}
@@ -55,21 +54,23 @@ public class Linearprobing {
 	}
 	public void add(String word){
 		display();
+		count++;
 		if(2*count>table.length)
 			grow();
+		int j=1;
 		display();
 		int pos = hash(word);
-		System.out.println(pos+" ");
 		while(table[pos]!=null){
 			if(table[pos].key.equals(word)){
 				return;
 			}
-			pos++;
+			pos+=j*j;
+			j++;
 			if(pos>table.length-1)
 				pos=0;
 		}
 		table[pos]= new Node(word);
-		count++;
+		
 	}
 	public boolean search(String word){
 		int pos = hash(word);
@@ -77,7 +78,7 @@ public class Linearprobing {
 			if(table[pos].key.equals(word))
 				return true;
 			pos++;
-			if(pos>=table.length)
+			if(pos>table.length)
 				pos=0;
 		}
 		return false;
@@ -93,22 +94,15 @@ public class Linearprobing {
 		}
 		System.out.println();
 	}
-	public static void main(String[] args) throws FileNotFoundException{
-		File f = new File("dict.txt");
-		Scanner s = new Scanner(f);
-		s.close();
-		Linearprobing l = new Linearprobing(1);
-//		while(s.hasNext()){
-//			l.add(s.next());
-//		}
-//		s.close();
+	public static void main(String[] args){
 		String[] str = {"aa","abc","abcd","itouch","ggs"};
-		for(String ss:str)
-			l.add(ss);
+		Linearprobing l = new Linearprobing(1);
+		for(String i:str)
+			l.add(i);
 		l.display();
-		System.out.println(l.search("aa"));
-		System.out.println(l.search("hello"));
-		System.out.println(l.search("aab"));
+		System.out.println(l.search("ac"));
+		System.out.println(l.search("abcd"));
+		System.out.println(l.search("itouch"));
 
 	}
 }

@@ -8,7 +8,6 @@ public class Hashmap {
 		Node(String k) { key = k;  }
 	}
 	private Node[] table;
-	private int used;
 	private int[] hist;
 	private final int hash(String word) {
 		int hash = word.length();
@@ -18,7 +17,6 @@ public class Hashmap {
 	}
 	public Hashmap(int initialSize) {
 		table = new Node[initialSize];
-		used = 0;
 		hist = new int[initialSize];
 	}
 
@@ -37,7 +35,6 @@ public class Hashmap {
 		Node temp = new Node(word);
 		temp.next = table[pos];
 		table[pos] = temp;
-		used++;
 		hist[pos]++;
 	}
 
@@ -66,6 +63,7 @@ public class Hashmap {
 		while(s.hasNext()){
 			System.out.println(m.contains(s.next()));
 		}
+		System.out.println("insert"+"\t"+"count");
 		m.printHist();
 	}
 }

@@ -8,7 +8,7 @@ public class Boggle{
 	private char[] boggle = new char[16];
 	private boolean[] isused = new boolean[16];
 	private String prefix = "";
-	private int length=0;
+//	private int length=0;
 	Boggle(Tri t,char[] c){
 		for(int i=0;i<c.length;i++){
 			boggle[i] = c[i];
