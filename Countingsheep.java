@@ -4,6 +4,10 @@ public class Countingsheep {
 
 	private ArrayList<Integer> count = new ArrayList<Integer>(1);
 	public Countingsheep(int n){
+		if(n==0){
+			System.out.println("insomnia");
+			return;
+		}
 		int temp = n;
 		int mul = 1;
 		while(temp*mul<1000000){
@@ -23,8 +27,8 @@ public class Countingsheep {
 			}
 			mul++;
 		}
-
 		System.out.println("insomnia");
+
 	}
 	public static void main(String[] args){
 		Countingsheep s = new Countingsheep(0);
