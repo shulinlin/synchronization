@@ -9,12 +9,12 @@ public class Boggle{
 	private char[] boggle = new char[16];
 	private boolean[] isused = new boolean[16];
 	private String prefix = "";
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //	private int length=0;
-=======
+//=======
 	private int length=0;
 	private ArrayList<String> conta = new ArrayList<String>(1);
->>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47
+//>>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47
 	Boggle(Tri t,char[] c){
 		for(int i=0;i<c.length;i++){
 			boggle[i] = c[i];
