@@ -14,6 +14,30 @@ public class A implements Serializable{
 
 		this.age = age;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getSSN() {
+		return SSN;
+	}
+	public void setSSN(int sSN) {
+		SSN = sSN;
+	}
+	public boolean isSex() {
+		return sex;
+	}
+	public void setSex(boolean sex) {
+		this.sex = sex;
+	}
 	public String toString(){
 		return name+" "+age;
 	}
