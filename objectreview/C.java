@@ -1,5 +1,5 @@
 package objectreview;
 
-public interface C {
+public class C {
 	
 }
