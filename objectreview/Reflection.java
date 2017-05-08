@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class Reflection extends D implements C {
+public class Reflection extends D {
 
 	public static void main(String[] args){
 //		B b1 = new B("tom",25,true);

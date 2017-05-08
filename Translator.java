@@ -144,11 +144,10 @@ public class Translator extends JFrame implements ActionListener{
 	}
 
 }
-<<<<<<< HEAD
-class Trie {
+class Trie1 {
 	private Node root;
 	char[] cha = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-	public Trie(){
+	public Trie1(){
 		root = new Node();
 		root.word = false;
 	}
@@ -192,27 +191,27 @@ class Trie {
 
 
 	}
-	public String search(String s){
-		Node node  = root;
-		for(int i=0;i<s.length();i++){
-			char c = s.charAt(i);
-			if(node.childlist[getindex(c)]==null){
-				//				System.out.println("false");
-				return "";
-			}
-
-
-			node = node.childlist[getindex(c)];
-		}
-		if(node.word){
-			//			System.out.println("true");
-			return node.translation;
-		}
-		//		System.out.println("false");
-		return "";
-	}
 }
-=======
+//	public String search(String s){
+//		Node node  = root;
+//		for(int i=0;i<s.length();i++){
+//			char c = s.charAt(i);
+//			if(node.childlist[getindex(c)]==null){
+//				//				System.out.println("false");
+//				return "";
+//			}
+//
+//
+//			node = node.childlist[getindex(c)];
+//		}
+//		if(node.word){
+//			//			System.out.println("true");
+//			return node.translation;
+//		}
+//		//		System.out.println("false");
+//		return "";
+//	}
+//}
 //class Trie {
 //	private Node root;
 //	char[] cha = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
@@ -280,4 +279,3 @@ class Trie {
 //		return s;
 //	}
 //}
->>>>>>> 62c54fd7d09f887b05690a77604a75978c0b2a47
