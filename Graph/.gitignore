@@ -3,3 +3,6 @@
 /graph.class
 /vertex.class
 /Vertice.class
+/Bellman.class
+/Edge.class
+/Bellman$Edge.class
