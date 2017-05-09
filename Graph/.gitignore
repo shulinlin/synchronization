@@ -3,6 +3,15 @@
 /graph.class
 /vertex.class
 /Vertice.class
+<<<<<<< HEAD
 /Bellman.class
 /Edge.class
 /Bellman$Edge.class
+=======
+/testG$Edge.class
+/testG.class
+/testG$1.class
+/Kruskal.class
+/Kruskal$Edge.class
+/Kruskal$1.class
+>>>>>>> 40dceafd0e983baeedf152dd6dabbceb35b0ec10
